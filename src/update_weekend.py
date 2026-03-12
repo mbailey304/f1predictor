@@ -6,7 +6,9 @@ from pathlib import Path
 
 from predict import predict_session
 from config import OUTPUTS_DIR, DEFAULT_PREDICT_YEAR, DEFAULT_PREDICT_ROUND
+from detect_round import detect_current_round
 from detect_stage import detect_stage
+from simulate_race import run_monte_carlo
 
 HISTORY_DIR = OUTPUTS_DIR / "history"
 HISTORY_DIR.mkdir(parents=True, exist_ok=True)
@@ -70,13 +72,20 @@ def update_weekend(year: int, round_number: int, stage: str):
         except Exception as e:
             print(f"Skipped {session_code}: {e}")
 
+    # Run race simulation after predictions
+    try:
+        print("Running race simulation...")
+        run_monte_carlo(year, round_number, n_sims=5000)
+    except Exception as e:
+        print(f"Skipped race simulation: {e}")
+    
     write_metadata(year, round_number, sessions_available, timestamp, stage)
     print(f"Weekend outputs updated for stage: {stage}")
 
 
 if __name__ == "__main__":
     year = DEFAULT_PREDICT_YEAR
-    round_number = DEFAULT_PREDICT_ROUND
+    round_number = detect_current_round(year)
     stage = None
 
     if len(sys.argv) >= 3:
