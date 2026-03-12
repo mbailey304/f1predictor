@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+import altair as alt
 
 st.set_page_config(page_title="F1 Weekend Predictor", layout="wide")
 
@@ -416,6 +417,45 @@ def show_update_shift_table(year: int, round_number: int, session_code: str, lab
             st.info("No negative movers yet.")
 
 
+def show_probability_charts(file_path: Path):
+    st.subheader("Race Win & Podium Probability Charts")
+
+    if not file_path.exists():
+        st.warning("No simulation summary found.")
+        return
+
+    sim_df = load_csv(file_path).copy()
+
+    for col in ["WinProbability", "PodiumProbability", "Top10Probability", "AvgFinish"]:
+        if col in sim_df.columns:
+            sim_df[col] = pd.to_numeric(sim_df[col], errors="coerce")
+
+    if "WinProbability" in sim_df.columns:
+        win_chart = (
+            alt.Chart(sim_df.sort_values("WinProbability", ascending=False).head(10))
+            .mark_bar()
+            .encode(
+                x=alt.X("WinProbability:Q", title="Win Probability"),
+                y=alt.Y("FullName:N", sort="-x", title="Driver"),
+                tooltip=["FullName", "TeamName", alt.Tooltip("WinProbability:Q", format=".1%")]
+            )
+        )
+        st.markdown("### Top 10 Win Chances")
+        st.altair_chart(win_chart, use_container_width=True)
+
+    if "PodiumProbability" in sim_df.columns:
+        podium_chart = (
+            alt.Chart(sim_df.sort_values("PodiumProbability", ascending=False).head(10))
+            .mark_bar()
+            .encode(
+                x=alt.X("PodiumProbability:Q", title="Podium Probability"),
+                y=alt.Y("FullName:N", sort="-x", title="Driver"),
+                tooltip=["FullName", "TeamName", alt.Tooltip("PodiumProbability:Q", format=".1%")]
+            )
+        )
+        st.markdown("### Top 10 Podium Chances")
+        st.altair_chart(podium_chart, use_container_width=True)
+
 st.title("🏁 F1 Weekend Predictor")
 
 metadata_file = OUTPUTS_DIR / "metadata.json"
@@ -479,3 +519,5 @@ with tab6:
 
 with tab7:
     show_sim_table(sim_file)
+    st.markdown("---")
+    show_probability_charts(sim_file)

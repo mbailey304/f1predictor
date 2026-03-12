@@ -6,7 +6,7 @@ from pathlib import Path
 
 from predict import predict_session
 from config import OUTPUTS_DIR, DEFAULT_PREDICT_YEAR, DEFAULT_PREDICT_ROUND
-
+from detect_stage import detect_stage
 
 HISTORY_DIR = OUTPUTS_DIR / "history"
 HISTORY_DIR.mkdir(parents=True, exist_ok=True)
@@ -77,7 +77,7 @@ def update_weekend(year: int, round_number: int, stage: str):
 if __name__ == "__main__":
     year = DEFAULT_PREDICT_YEAR
     round_number = DEFAULT_PREDICT_ROUND
-    stage = "Manual Update"
+    stage = None
 
     if len(sys.argv) >= 3:
         year = int(sys.argv[1])
@@ -85,5 +85,8 @@ if __name__ == "__main__":
 
     if len(sys.argv) >= 4:
         stage = sys.argv[3]
+
+    if stage is None:
+        stage = detect_stage(year, round_number)
 
     update_weekend(year, round_number, stage)
