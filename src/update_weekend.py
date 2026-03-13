@@ -55,6 +55,7 @@ def write_metadata(
 def update_weekend(year: int, round_number: int, stage: str):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     sessions_available = []
+    created_prediction_files = []
 
     for session_code in ["Q", "R", "SQ", "S"]:
         try:
@@ -62,25 +63,29 @@ def update_weekend(year: int, round_number: int, stage: str):
             predict_session(year, round_number, session_code)
 
             out_file = OUTPUTS_DIR / f"{year}_{round_number}_{session_code}_predictions.csv"
-            snapshot_path = snapshot_file(out_file, timestamp, stage)
+            if out_file.exists():
+                snapshot_path = snapshot_file(out_file, timestamp, stage)
 
-            if snapshot_path is not None:
-                print(f"Saved snapshot: {snapshot_path.name}")
+                if snapshot_path is not None:
+                    print(f"Saved snapshot: {snapshot_path.name}")
 
-            sessions_available.append(session_code)
+                sessions_available.append(session_code)
+                created_prediction_files.append(out_file)
 
         except Exception as e:
             print(f"Skipped {session_code}: {e}")
 
-    # Run race simulation after predictions
     try:
         print("Running race simulation...")
         run_monte_carlo(year, round_number, n_sims=5000)
     except Exception as e:
         print(f"Skipped race simulation: {e}")
-    
-    write_metadata(year, round_number, sessions_available, timestamp, stage)
-    print(f"Weekend outputs updated for stage: {stage}")
+
+    if created_prediction_files:
+        write_metadata(year, round_number, sessions_available, timestamp, stage)
+        print(f"Weekend outputs updated for stage: {stage}")
+    else:
+        print("No prediction files were created. Metadata was NOT updated.")
 
 
 if __name__ == "__main__":

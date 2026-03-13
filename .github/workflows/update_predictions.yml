@@ -43,6 +43,10 @@ jobs:
         run: |
           python src/ingest.py
 
+      - name: Retrain models
+        run: |
+          python src/train.py
+
       - name: Detect current round if needed
         id: detect_round
         run: |
