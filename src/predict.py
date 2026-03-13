@@ -22,7 +22,6 @@ from utils import get_prior_weight, get_current_weight
 
 fastf1.Cache.enable_cache(str(CACHE_DIR))
 
-
 def build_prediction_rows(
     history_df: pd.DataFrame,
     year: int,
@@ -33,23 +32,68 @@ def build_prediction_rows(
     event_row = schedule[schedule["RoundNumber"] == round_number].iloc[0]
     event_name = event_row["EventName"]
 
-    event = fastf1.get_event(year, round_number)
+    def fallback_driver_list(df: pd.DataFrame, target_year: int, target_round: int) -> pd.DataFrame:
+        # 1) same season, earlier rounds, newest first
+        same_season = df[
+            (df["Year"] == target_year) &
+            (df["Round"] < target_round)
+        ].copy()
+
+        same_season = same_season.dropna(subset=["FullName", "TeamName"])
+
+        if not same_season.empty:
+            latest_round = same_season["Round"].max()
+            prior = same_season[same_season["Round"] == latest_round][["FullName", "TeamName"]]
+            prior = prior.drop_duplicates(subset=["FullName", "TeamName"]).reset_index(drop=True)
+            if not prior.empty:
+                return prior
+
+        # 2) latest round available in all history
+        hist = df.dropna(subset=["FullName", "TeamName"]).copy()
+        if not hist.empty:
+            hist = hist.sort_values(["Year", "Round"])
+            latest_year = hist["Year"].max()
+            latest_round = hist[hist["Year"] == latest_year]["Round"].max()
+            latest = hist[
+                (hist["Year"] == latest_year) &
+                (hist["Round"] == latest_round)
+            ][["FullName", "TeamName"]]
+            latest = latest.drop_duplicates(subset=["FullName", "TeamName"]).reset_index(drop=True)
+            if not latest.empty:
+                return latest
+
+        return pd.DataFrame(columns=["FullName", "TeamName"])
 
     current_drivers = None
-    for session_try in ["R", "Q", "SQ", "S"]:
-        try:
-            s = event.get_session(session_try)
-            s.load(laps=False, telemetry=False, weather=False, messages=False)
-            current_drivers = s.results[["FullName", "TeamName"]].copy()
-            break
-        except Exception:
-            continue
+
+    try:
+        event = fastf1.get_event(year, round_number)
+
+        for session_try in ["R", "Q", "SQ", "S", "FP1", "FP2", "FP3"]:
+            try:
+                s = event.get_session(session_try)
+                s.load(laps=False, telemetry=False, weather=False, messages=False)
+
+                # Only use it if there are actually rows
+                if hasattr(s, "results") and s.results is not None and not s.results.empty:
+                    cols = [c for c in ["FullName", "TeamName"] if c in s.results.columns]
+                    if len(cols) == 2:
+                        tmp = s.results[cols].dropna().drop_duplicates().reset_index(drop=True)
+                        if not tmp.empty:
+                            current_drivers = tmp
+                            break
+            except Exception:
+                continue
+    except Exception:
+        pass
 
     if current_drivers is None or current_drivers.empty:
-        prior = history_df[
-            (history_df["Year"] == year) & (history_df["Round"] == round_number - 1)
-        ]
-        current_drivers = prior[["FullName", "TeamName"]].drop_duplicates().copy()
+        current_drivers = fallback_driver_list(history_df, year, round_number)
+
+    if current_drivers is None or current_drivers.empty:
+        raise ValueError(
+            f"Could not determine driver list for {year} round {round_number}"
+        )
 
     current_drivers = current_drivers.drop_duplicates(
         subset=["FullName", "TeamName"]
@@ -82,8 +126,12 @@ def build_prediction_rows(
         keep="last"
     ).reset_index(drop=True)
 
-    return target_rows
+    if target_rows.empty:
+        raise ValueError(
+            f"No prediction rows were created for {year} round {round_number} {session_code}"
+        )
 
+    return target_rows
 
 def attach_practice_features(
     pred_rows: pd.DataFrame,

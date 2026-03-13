@@ -1,6 +1,7 @@
 import sys
 import json
 import shutil
+import pandas as pd
 from datetime import datetime
 from pathlib import Path
 import fastf1
@@ -75,19 +76,26 @@ def update_weekend(year: int, round_number: int, stage: str):
 
             out_file = OUTPUTS_DIR / f"{year}_{round_number}_{session_code}_predictions.csv"
             if out_file.exists():
-                snapshot_path = snapshot_file(out_file, timestamp, stage)
+                try:
+                    df = pd.read_csv(out_file)
+                    if not df.empty:
+                        snapshot_path = snapshot_file(out_file, timestamp, stage)
 
-                if snapshot_path is not None:
-                    print(f"Saved snapshot: {snapshot_path.name}")
+                        if snapshot_path is not None:
+                            print(f"Saved snapshot: {snapshot_path.name}")
 
-                sessions_available.append(session_code)
-                created_prediction_files.append(out_file)
+                        sessions_available.append(session_code)
+                        created_prediction_files.append(out_file)
+                    else:
+                        print(f"Prediction file exists but is empty: {out_file.name}")
+                except Exception as e:
+                    print(f"Could not validate prediction file {out_file.name}: {e}")
 
         except Exception as e:
             print(f"Skipped {session_code}: {e}")
 
     try:
-        print("Running race simulation...")
+        print(f"Running race simulation ({MONTE_CARLO_SIMS} sims)...")
         run_monte_carlo(year, round_number, n_sims=MONTE_CARLO_SIMS)
     except Exception as e:
         print(f"Skipped race simulation: {e}")
@@ -97,7 +105,6 @@ def update_weekend(year: int, round_number: int, stage: str):
         print(f"Weekend outputs updated for stage: {stage}")
     else:
         print("No prediction files were created. Metadata was NOT updated.")
-
 
 if __name__ == "__main__":
     year = DEFAULT_PREDICT_YEAR
