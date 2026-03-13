@@ -1,9 +1,12 @@
 import json
 from pathlib import Path
 
+import altair as alt
 import pandas as pd
 import streamlit as st
-import altair as alt
+
+from src.config import KELLY_FRACTION, MIN_EDGE, MIN_EV
+from src.odds import build_value_bets
 
 st.set_page_config(page_title="F1 Weekend Predictor", layout="wide")
 
@@ -308,10 +311,6 @@ def show_prediction_shift_table(q_file: Path, r_file: Path):
 
 
 def parse_snapshot_info(path: Path):
-    """
-    Expected filename:
-    2026_1_Q_predictions__Post-FP1__20260312_153012.csv
-    """
     stem = path.stem
     parts = stem.split("__")
 
@@ -442,7 +441,7 @@ def show_probability_charts(file_path: Path):
             alt.Chart(win_df)
             .mark_bar()
             .encode(
-                x=alt.X("WinProbability:Q", title="Win Probability"),
+                x=alt.X("WinProbability:Q", title="Win Probability", axis=alt.Axis(format="%")),
                 y=alt.Y("FullName:N", sort="-x", title="Driver"),
                 tooltip=[
                     alt.Tooltip("FullName:N", title="Driver"),
@@ -461,7 +460,7 @@ def show_probability_charts(file_path: Path):
             alt.Chart(podium_df)
             .mark_bar()
             .encode(
-                x=alt.X("PodiumProbability:Q", title="Podium Probability"),
+                x=alt.X("PodiumProbability:Q", title="Podium Probability", axis=alt.Axis(format="%")),
                 y=alt.Y("FullName:N", sort="-x", title="Driver"),
                 tooltip=[
                     alt.Tooltip("FullName:N", title="Driver"),
@@ -480,7 +479,7 @@ def show_probability_charts(file_path: Path):
             alt.Chart(top10_df)
             .mark_bar()
             .encode(
-                x=alt.X("Top10Probability:Q", title="Top 10 Probability"),
+                x=alt.X("Top10Probability:Q", title="Top 10 Probability", axis=alt.Axis(format="%")),
                 y=alt.Y("FullName:N", sort="-x", title="Driver"),
                 tooltip=[
                     alt.Tooltip("FullName:N", title="Driver"),
@@ -490,6 +489,154 @@ def show_probability_charts(file_path: Path):
             )
         )
         st.altair_chart(top10_chart, use_container_width=True)
+
+
+def show_manual_value_bets(sim_file: Path):
+    st.subheader("Manual Odds Value Bets")
+    st.caption("Enter sportsbook odds for win, podium, and top 10 markets, then compare them to your model probabilities.")
+
+    if not sim_file.exists():
+        st.warning("No race simulation summary found.")
+        return
+
+    sim_df = load_csv(sim_file).copy()
+
+    required_cols = ["FullName", "TeamName", "WinProbability", "PodiumProbability", "Top10Probability"]
+    if not all(col in sim_df.columns for col in required_cols):
+        st.warning("Simulation summary is missing required columns.")
+        return
+
+    driver_rows = sim_df[["FullName", "TeamName"]].copy().drop_duplicates()
+    driver_rows = driver_rows.sort_values("FullName").reset_index(drop=True)
+
+    input_rows = []
+    for _, row in driver_rows.iterrows():
+        input_rows.append({
+            "Driver": row["FullName"],
+            "Market": "win",
+            "Sportsbook": "Manual",
+            "AmericanOdds": None,
+        })
+        input_rows.append({
+            "Driver": row["FullName"],
+            "Market": "podium",
+            "Sportsbook": "Manual",
+            "AmericanOdds": None,
+        })
+        input_rows.append({
+            "Driver": row["FullName"],
+            "Market": "top10",
+            "Sportsbook": "Manual",
+            "AmericanOdds": None,
+        })
+
+    odds_input_df = pd.DataFrame(input_rows)
+
+    st.markdown("### Enter Odds")
+    edited_df = st.data_editor(
+        odds_input_df,
+        use_container_width=True,
+        hide_index=True,
+        num_rows="fixed",
+        column_config={
+            "Driver": st.column_config.TextColumn(disabled=True),
+            "Market": st.column_config.TextColumn(disabled=True),
+            "Sportsbook": st.column_config.TextColumn(help="Enter book name if you want"),
+            "AmericanOdds": st.column_config.NumberColumn(
+                help="Examples: +350 as 350, -120 as -120",
+                step=1,
+            ),
+        },
+        key="manual_odds_editor",
+    )
+
+    valid_odds = edited_df.dropna(subset=["AmericanOdds"]).copy()
+
+    if valid_odds.empty:
+        st.info("Enter at least one odds value to calculate edges.")
+        return
+
+    try:
+        value_df = build_value_bets(sim_df, valid_odds)
+    except Exception as e:
+        st.error(f"Could not calculate value bets: {e}")
+        return
+
+    if value_df.empty:
+        st.warning("No valid comparisons were produced.")
+        return
+
+    filtered = value_df[
+        (value_df["Edge"] >= MIN_EDGE) &
+        (value_df["ExpectedValue"] >= MIN_EV)
+    ].copy()
+
+    all_display = value_df.copy()
+    all_display["ImpliedProbability"] = (all_display["ImpliedProbability"] * 100).round(1).astype(str) + "%"
+    all_display["ModelProbability"] = (all_display["ModelProbability"] * 100).round(1).astype(str) + "%"
+    all_display["Edge"] = (pd.to_numeric(all_display["Edge"]) * 100).round(1).astype(str) + "%"
+    all_display["ExpectedValue"] = (pd.to_numeric(all_display["ExpectedValue"]) * 100).round(1).astype(str) + "%"
+    all_display["SuggestedStake"] = (
+        (pd.to_numeric(all_display["KellyFull"]) * KELLY_FRACTION * 100)
+        .round(2)
+        .astype(str) + "% bankroll"
+    )
+
+    filtered_display = filtered.copy()
+    if not filtered_display.empty:
+        filtered_display["ImpliedProbability"] = (filtered_display["ImpliedProbability"] * 100).round(1).astype(str) + "%"
+        filtered_display["ModelProbability"] = (filtered_display["ModelProbability"] * 100).round(1).astype(str) + "%"
+        filtered_display["Edge"] = (pd.to_numeric(filtered_display["Edge"]) * 100).round(1).astype(str) + "%"
+        filtered_display["ExpectedValue"] = (pd.to_numeric(filtered_display["ExpectedValue"]) * 100).round(1).astype(str) + "%"
+        filtered_display["SuggestedStake"] = (
+            (pd.to_numeric(filtered_display["KellyFull"]) * KELLY_FRACTION * 100)
+            .round(2)
+            .astype(str) + "% bankroll"
+        )
+
+    st.markdown("### Best Value Bets")
+    if filtered_display.empty:
+        st.info("No bets currently clear your edge and EV thresholds.")
+    else:
+        st.dataframe(
+            filtered_display[
+                [
+                    "Driver",
+                    "TeamName",
+                    "Market",
+                    "Sportsbook",
+                    "AmericanOdds",
+                    "ImpliedProbability",
+                    "ModelProbability",
+                    "Edge",
+                    "ExpectedValue",
+                    "SuggestedStake",
+                ]
+            ],
+            use_container_width=True,
+            hide_index=True,
+        )
+
+    st.markdown("### All Entered Odds vs Model")
+    st.dataframe(
+        all_display[
+            [
+                "Driver",
+                "TeamName",
+                "Market",
+                "Sportsbook",
+                "AmericanOdds",
+                "ImpliedProbability",
+                "ModelProbability",
+                "Edge",
+                "ExpectedValue",
+                "SuggestedStake",
+            ]
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
+
 
 st.title("🏁 F1 Weekend Predictor")
 
@@ -528,7 +675,7 @@ sq_file = OUTPUTS_DIR / f"{year}_{round_number}_SQ_predictions.csv"
 s_file = OUTPUTS_DIR / f"{year}_{round_number}_S_predictions.csv"
 sim_file = OUTPUTS_DIR / f"{year}_{round_number}_R_simulation_summary.csv"
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
     [
         "🏎️ Qualifying",
         "🏁 Race",
@@ -537,6 +684,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
         "⚡ Sprint Qualifying",
         "⚡ Sprint",
         "📊 Race Probabilities",
+        "💰 Value Bets",
     ]
 )
 
@@ -566,3 +714,6 @@ with tab7:
     show_sim_table(sim_file)
     st.markdown("---")
     show_probability_charts(sim_file)
+
+with tab8:
+    show_manual_value_bets(sim_file)
