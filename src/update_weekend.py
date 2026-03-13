@@ -3,6 +3,7 @@ import json
 import shutil
 from datetime import datetime
 from pathlib import Path
+import fastf1
 
 from predict import predict_session
 from config import OUTPUTS_DIR, DEFAULT_PREDICT_YEAR, DEFAULT_PREDICT_ROUND
@@ -33,6 +34,13 @@ def snapshot_file(path: Path, timestamp: str, stage: str):
     shutil.copy2(path, snapshot_path)
     return snapshot_path
 
+def get_event_name(year: int, round_number: int) -> str:
+    try:
+        schedule = fastf1.get_event_schedule(year)
+        row = schedule[schedule["RoundNumber"] == round_number].iloc[0]
+        return str(row["EventName"])
+    except Exception:
+        return f"Round {round_number}"
 
 def write_metadata(
     year: int,
@@ -41,9 +49,12 @@ def write_metadata(
     timestamp: str,
     stage: str
 ):
+    event_name = get_event_name(year, round_number)
+
     metadata = {
         "year": year,
         "round": round_number,
+        "event_name": event_name,
         "last_updated": timestamp,
         "stage": stage,
         "sessions_available": sessions_available,

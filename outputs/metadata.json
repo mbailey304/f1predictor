@@ -1,8 +1,9 @@
 {
   "year": 2026,
-  "round": 1,
-  "last_updated": "20260312_192829",
-  "stage": "Post-Race",
+  "round": 2,
+  "event_name": "Chinese Grand Prix",
+  "last_updated": "20260312_203107",
+  "stage": "Pre-weekend",
   "sessions_available": [
     "Q",
     "R",

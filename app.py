@@ -463,19 +463,29 @@ if metadata_file.exists():
     meta = load_metadata(metadata_file)
     year = meta.get("year", 2026)
     round_number = meta.get("round", 1)
+    event_name = meta.get("event_name", f"Round {round_number}")
     last_updated = meta.get("last_updated", "Unknown")
     current_stage = meta.get("stage", "Unknown")
 else:
     year = 2026
     round_number = 1
+    event_name = f"Round {round_number}"
     last_updated = "Unknown"
     current_stage = "Unknown"
 
-m1, m2, m3, m4 = st.columns(4)
-m1.metric("Season", year)
-m2.metric("Round", round_number)
-m3.metric("Stage", current_stage)
-m4.metric("Last Updated", last_updated)
+st.markdown(
+    f"""
+<div style="padding: 6px 0 14px 0;">
+    <div style="font-size: 30px; font-weight: 700;">{event_name}</div>
+    <div style="font-size: 16px; opacity: 0.8;">Season {year} • Round {round_number}</div>
+</div>
+""",
+    unsafe_allow_html=True
+)
+
+m1, m2 = st.columns(2)
+m1.metric("Stage", current_stage)
+m2.metric("Last Updated", last_updated)
 
 q_file = OUTPUTS_DIR / f"{year}_{round_number}_Q_predictions.csv"
 r_file = OUTPUTS_DIR / f"{year}_{round_number}_R_predictions.csv"
