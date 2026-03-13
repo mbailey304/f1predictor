@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import pandas as pd
 import fastf1
 
@@ -12,6 +12,7 @@ def to_naive(dt):
         return None
 
     ts = pd.Timestamp(dt)
+
     if ts.tzinfo is not None:
         ts = ts.tz_convert("UTC").tz_localize(None)
 
@@ -22,7 +23,7 @@ def detect_current_round(year: int = CURRENT_SEASON) -> int:
     schedule = fastf1.get_event_schedule(year)
     now = datetime.utcnow()
 
-    candidates = []
+    events = []
 
     for _, event in schedule.iterrows():
         try:
@@ -36,35 +37,48 @@ def detect_current_round(year: int = CURRENT_SEASON) -> int:
         except Exception:
             pass
 
-        first_session_time = None
+        session_dates = []
 
         for col in ["Session1Date", "Session2Date", "Session3Date", "Session4Date", "Session5Date", "EventDate"]:
             if col in event and pd.notna(event[col]):
-                first_session_time = to_naive(event[col])
-                if first_session_time is not None:
-                    break
+                dt = to_naive(event[col])
+                if dt is not None:
+                    session_dates.append(dt)
 
-        if first_session_time is None:
+        if not session_dates:
             continue
 
-        candidates.append((round_number, first_session_time))
+        session_dates = sorted(session_dates)
 
-    if not candidates:
+        # Start slightly before the first listed session
+        weekend_start = session_dates[0] - timedelta(hours=12)
+
+        # End well after the final listed session to avoid early rollover
+        weekend_end = session_dates[-1] + timedelta(hours=36)
+
+        events.append((round_number, weekend_start, weekend_end))
+
+    if not events:
         return 1
 
-    candidates = sorted(candidates, key=lambda x: x[1])
+    events = sorted(events, key=lambda x: x[1])
 
-    # If we're before the first event, use round 1
-    if now < candidates[0][1]:
-        return candidates[0][0]
+    # Before first weekend
+    if now < events[0][1]:
+        return events[0][0]
 
-    # Return the first round whose first session has not happened yet
-    for round_number, first_session_time in candidates:
-        if now < first_session_time:
+    # During an active weekend window
+    for round_number, weekend_start, weekend_end in events:
+        if weekend_start <= now <= weekend_end:
             return round_number
 
-    # If all weekends have started already, return the last one
-    return candidates[-1][0]
+    # Between weekends -> next upcoming
+    for round_number, weekend_start, weekend_end in events:
+        if now < weekend_start:
+            return round_number
+
+    # After final weekend
+    return events[-1][0]
 
 
 if __name__ == "__main__":
