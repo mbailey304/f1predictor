@@ -418,7 +418,7 @@ def show_update_shift_table(year: int, round_number: int, session_code: str, lab
 
 
 def show_probability_charts(file_path: Path):
-    st.subheader("Race Win & Podium Probability Charts")
+    st.subheader("Race Probability Charts")
 
     if not file_path.exists():
         st.warning("No simulation summary found.")
@@ -426,35 +426,70 @@ def show_probability_charts(file_path: Path):
 
     sim_df = load_csv(file_path).copy()
 
-    for col in ["WinProbability", "PodiumProbability", "Top10Probability", "AvgFinish"]:
+    needed = ["FullName", "TeamName", "WinProbability", "PodiumProbability", "Top10Probability"]
+    available = [c for c in needed if c in sim_df.columns]
+    sim_df = sim_df[available].copy()
+
+    for col in ["WinProbability", "PodiumProbability", "Top10Probability"]:
         if col in sim_df.columns:
             sim_df[col] = pd.to_numeric(sim_df[col], errors="coerce")
 
     if "WinProbability" in sim_df.columns:
+        st.markdown("### Win Probability")
+        win_df = sim_df.sort_values("WinProbability", ascending=False).head(10)
+
         win_chart = (
-            alt.Chart(sim_df.sort_values("WinProbability", ascending=False).head(10))
+            alt.Chart(win_df)
             .mark_bar()
             .encode(
                 x=alt.X("WinProbability:Q", title="Win Probability"),
                 y=alt.Y("FullName:N", sort="-x", title="Driver"),
-                tooltip=["FullName", "TeamName", alt.Tooltip("WinProbability:Q", format=".1%")]
+                tooltip=[
+                    alt.Tooltip("FullName:N", title="Driver"),
+                    alt.Tooltip("TeamName:N", title="Team"),
+                    alt.Tooltip("WinProbability:Q", title="Win %", format=".1%"),
+                ],
             )
         )
-        st.markdown("### Top 10 Win Chances")
         st.altair_chart(win_chart, use_container_width=True)
 
     if "PodiumProbability" in sim_df.columns:
+        st.markdown("### Podium Probability")
+        podium_df = sim_df.sort_values("PodiumProbability", ascending=False).head(10)
+
         podium_chart = (
-            alt.Chart(sim_df.sort_values("PodiumProbability", ascending=False).head(10))
+            alt.Chart(podium_df)
             .mark_bar()
             .encode(
                 x=alt.X("PodiumProbability:Q", title="Podium Probability"),
                 y=alt.Y("FullName:N", sort="-x", title="Driver"),
-                tooltip=["FullName", "TeamName", alt.Tooltip("PodiumProbability:Q", format=".1%")]
+                tooltip=[
+                    alt.Tooltip("FullName:N", title="Driver"),
+                    alt.Tooltip("TeamName:N", title="Team"),
+                    alt.Tooltip("PodiumProbability:Q", title="Podium %", format=".1%"),
+                ],
             )
         )
-        st.markdown("### Top 10 Podium Chances")
         st.altair_chart(podium_chart, use_container_width=True)
+
+    if "Top10Probability" in sim_df.columns:
+        st.markdown("### Top 10 Probability")
+        top10_df = sim_df.sort_values("Top10Probability", ascending=False).head(10)
+
+        top10_chart = (
+            alt.Chart(top10_df)
+            .mark_bar()
+            .encode(
+                x=alt.X("Top10Probability:Q", title="Top 10 Probability"),
+                y=alt.Y("FullName:N", sort="-x", title="Driver"),
+                tooltip=[
+                    alt.Tooltip("FullName:N", title="Driver"),
+                    alt.Tooltip("TeamName:N", title="Team"),
+                    alt.Tooltip("Top10Probability:Q", title="Top 10 %", format=".1%"),
+                ],
+            )
+        )
+        st.altair_chart(top10_chart, use_container_width=True)
 
 st.title("🏁 F1 Weekend Predictor")
 

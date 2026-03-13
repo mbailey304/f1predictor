@@ -6,7 +6,7 @@ from pathlib import Path
 import fastf1
 
 from predict import predict_session
-from config import OUTPUTS_DIR, DEFAULT_PREDICT_YEAR, DEFAULT_PREDICT_ROUND
+from config import OUTPUTS_DIR, DEFAULT_PREDICT_YEAR, DEFAULT_PREDICT_ROUND, MONTE_CARLO_SIMS
 from detect_round import detect_current_round
 from detect_stage import detect_stage
 from simulate_race import run_monte_carlo
@@ -88,7 +88,7 @@ def update_weekend(year: int, round_number: int, stage: str):
 
     try:
         print("Running race simulation...")
-        run_monte_carlo(year, round_number, n_sims=5000)
+        run_monte_carlo(year, round_number, n_sims=MONTE_CARLO_SIMS)
     except Exception as e:
         print(f"Skipped race simulation: {e}")
 

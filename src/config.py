@@ -22,6 +22,8 @@ SESSION_CODES = ["Q", "R", "SQ", "S"]
 CURRENT_SEASON = 2026
 REG_RESET_YEAR = 2026
 
+MONTE_CARLO_SIMS = 10000
+
 # Historical prior fades quickly in early 2026
 EARLY_SEASON_PRIOR_WEIGHTS = {
     1: 0.30,
