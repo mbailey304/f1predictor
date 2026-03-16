@@ -1,0 +1,23 @@
+DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,Year,Round,EventName,SessionCode,driver_prev_pos_avg_3,driver_prev_pos_avg_5,team_prev_pos_avg_3,driver_prev_points_avg_3,driver_prev_grid_avg_3,current_season_driver_avg_pos,current_season_team_avg_pos,current_season_driver_avg_grid,PriorModelScore,CurrentSeasonScore,FinalScore,PredictedRank,PriorWeight,CurrentWeight
+,George Russell,,Mercedes,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,2.5,3.25,2.5,,,1.0,1.0,,3.1588279918215365,0.35,0.9117655983643074,1,0.2,0.8
+,Isack Hadjar,,Red Bull Racing,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,6.0,6.5,3.0,,,3.0,3.0,,3.684651871997387,1.05,1.5769303743994776,2,0.2,0.8
+,Charles Leclerc,,Ferrari,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,4.5,7.0,4.5,,,4.0,4.0,,3.0180728424108003,1.4,1.72361456848216,3,0.2,0.8
+,Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,8.0,9.5,8.0,,,2.0,1.5,,6.929535357069258,0.625,1.8859070714138517,4,0.2,0.8
+,Oscar Piastri,,McLaren,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,4.0,3.5,4.0,,,5.0,5.5,,2.648489815932488,1.825,1.9896979631864977,5,0.2,0.8
+,Max Verstappen,,Red Bull Racing,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,1.0,2.0,1.0,,,,3.0,,2.3416595657627917,2.45,2.4283319131525585,6,0.2,0.8
+,Lando Norris,,McLaren,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,4.0,2.75,4.0,,,6.0,6.0,,4.27767087780813,2.1,2.5355341755616263,7,0.2,0.8
+,Lewis Hamilton,,Ferrari,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,11.5,15.25,11.5,,,7.0,5.5,,9.64620902773694,2.225,3.7092418055473884,8,0.2,0.8
+,Liam Lawson,,Racing Bulls,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,10.5,9.75,10.5,,,8.0,8.5,,9.49663939709909,2.875,4.199327879419818,9,0.2,0.8
+,Gabriel Bortoleto,,Audi,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,8.5,12.25,10.0,,,10.0,10.0,,7.765690222930101,3.5,4.353138044586021,10,0.2,0.8
+,Carlos Sainz,,Williams,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,12.0,7.333333333333333,12.0,,,,15.0,,5.947567088893412,4.25,4.589513417778683,11,0.2,0.8
+,Arvid Lindblad,,Racing Bulls,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,9.0,9.0,9.0,,,9.0,9.0,,11.541072713337778,3.15,4.828214542667556,12,0.2,0.8
+,Oliver Bearman,,Haas F1 Team,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,11.5,12.5,11.5,,,12.0,12.5,,9.343503817051168,4.275,5.288700763410234,13,0.2,0.8
+,Esteban Ocon,,Haas F1 Team,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,10.5,12.75,10.5,,,13.0,13.0,,9.3689335510451,4.55,5.51378671020902,14,0.2,0.8
+,Nico Hulkenberg,,Audi,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,14.5,12.75,11.0,,,11.0,10.5,,14.797815585812602,3.7750000000000004,5.979563117162521,15,0.2,0.8
+,Lance Stroll,,Aston Martin,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,15.0,15.333333333333334,15.0,,,,17.0,,16.482698294336615,4.55,6.936539658867323,16,0.2,0.8
+,Franco Colapinto,,Alpine,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,18.0,17.75,18.0,,,16.0,16.0,,12.842596524869906,5.6,7.048519304973981,17,0.2,0.8
+,Pierre Gasly,,Alpine,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,16.5,13.0,16.5,,,14.0,15.0,,15.666137127836226,5.050000000000001,7.173227425567246,18,0.2,0.8
+,Alexander Albon,,Williams,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,16.0,15.75,16.0,,,15.0,15.0,,15.933813525579689,5.25,7.386762705115938,19,0.2,0.8
+,Fernando Alonso,,Aston Martin,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,11.5,9.5,11.5,,,17.0,17.0,,13.218883683433175,5.95,7.403776736686636,20,0.2,0.8
+,Sergio Perez,,Cadillac,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,18.0,18.0,18.0,,,18.0,18.0,,13.822514471210853,6.3,7.804502894242171,21,0.2,0.8
+,Valtteri Bottas,,Cadillac,,,,,,,,,,,2026,3,Japanese Grand Prix,Q,19.0,19.0,19.0,,,19.0,18.5,,13.822514471210853,6.575,8.024502894242172,22,0.2,0.8
