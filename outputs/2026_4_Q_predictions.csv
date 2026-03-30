@@ -1,0 +1,23 @@
+DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,Year,Round,EventName,SessionCode,driver_prev_pos_avg_3,driver_prev_pos_avg_5,team_prev_pos_avg_3,driver_prev_points_avg_3,driver_prev_grid_avg_3,current_season_driver_avg_pos,current_season_team_avg_pos,current_season_driver_avg_grid,PriorModelScore,CurrentSeasonScore,FinalScore,PredictedRank,PriorWeight,CurrentWeight
+,George Russell,,Mercedes,,,,,,,,,,,2026,4,Miami Grand Prix,Q,1.0,3.0,1.0,,,1.0,1.0,,3.0049703922502,0.35,0.74824555883753,1,0.15,0.85
+,Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,4,Miami Grand Prix,Q,2.0,7.0,2.0,,,2.0,1.5,,2.1340091854294636,0.625,0.8513513778144195,2,0.15,0.85
+,Isack Hadjar,,Red Bull Racing,,,,,,,,,,,2026,4,Miami Grand Prix,Q,3.0,6.0,3.0,,,3.0,3.0,,4.560287186068853,1.05,1.576543077910328,3,0.15,0.85
+,Charles Leclerc,,Ferrari,,,,,,,,,,,2026,4,Miami Grand Prix,Q,4.0,6.333333333333333,4.0,,,4.0,4.0,,4.156465332982181,1.4,1.813469799947327,4,0.15,0.85
+,Oscar Piastri,,McLaren,,,,,,,,,,,2026,4,Miami Grand Prix,Q,5.0,3.0,5.0,,,5.0,5.5,,1.9634952817058875,1.825,1.845774292255883,5,0.15,0.85
+,Lando Norris,,McLaren,,,,,,,,,,,2026,4,Miami Grand Prix,Q,6.0,3.3333333333333335,6.0,,,6.0,6.0,,4.116246793902149,2.1,2.402437019085322,6,0.15,0.85
+,Max Verstappen,,Red Bull Racing,,,,,,,,,,,2026,4,Miami Grand Prix,Q,,2.0,,,,,3.0,,2.230918829384612,2.45,2.4171378244076918,7,0.15,0.85
+,Lewis Hamilton,,Ferrari,,,,,,,,,,,2026,4,Miami Grand Prix,Q,7.0,13.666666666666666,7.0,,,7.0,5.5,,9.358561749669871,2.225,3.2950342624504807,8,0.15,0.85
+,Liam Lawson,,Racing Bulls,,,,,,,,,,,2026,4,Miami Grand Prix,Q,8.0,11.0,8.0,,,8.0,8.5,,8.774869686235837,2.875,3.7599804529353755,9,0.15,0.85
+,Arvid Lindblad,,Racing Bulls,,,,,,,,,,,2026,4,Miami Grand Prix,Q,9.0,9.0,9.0,,,9.0,9.0,,11.541072713337778,3.15,4.408660907000666,10,0.15,0.85
+,Gabriel Bortoleto,,Audi,,,,,,,,,,,2026,4,Miami Grand Prix,Q,10.0,10.333333333333334,10.0,,,10.0,10.0,,9.793543038694683,3.5,4.444031455804202,11,0.15,0.85
+,Carlos Sainz,,Williams,,,,,,,,,,,2026,4,Miami Grand Prix,Q,,9.5,,,,,15.0,,9.634473475745214,4.25,5.057671021361782,12,0.15,0.85
+,Nico Hulkenberg,,Audi,,,,,,,,,,,2026,4,Miami Grand Prix,Q,11.0,13.333333333333334,11.0,,,11.0,10.5,,12.630863641199829,3.7750000000000004,5.1033795461799745,13,0.15,0.85
+,Oliver Bearman,,Haas F1 Team,,,,,,,,,,,2026,4,Miami Grand Prix,Q,12.0,12.0,12.0,,,12.0,12.5,,10.846438423935858,4.275,5.260715763590379,14,0.15,0.85
+,Esteban Ocon,,Haas F1 Team,,,,,,,,,,,2026,4,Miami Grand Prix,Q,13.0,12.666666666666666,13.0,,,13.0,13.0,,12.252418996290658,4.55,5.705362849443598,15,0.15,0.85
+,Lance Stroll,,Aston Martin,,,,,,,,,,,2026,4,Miami Grand Prix,Q,,17.0,,,,,17.0,,14.555680280988055,4.55,6.0508520421482075,16,0.15,0.85
+,Pierre Gasly,,Alpine,,,,,,,,,,,2026,4,Miami Grand Prix,Q,14.0,14.0,14.0,,,14.0,15.0,,14.51701766768413,5.050000000000001,6.47005265015262,17,0.15,0.85
+,Franco Colapinto,,Alpine,,,,,,,,,,,2026,4,Miami Grand Prix,Q,16.0,18.666666666666668,16.0,,,16.0,16.0,,13.966107144764829,5.6,6.854916071714724,18,0.15,0.85
+,Fernando Alonso,,Aston Martin,,,,,,,,,,,2026,4,Miami Grand Prix,Q,17.0,10.333333333333334,17.0,,,17.0,17.0,,12.103754907660578,5.95,6.873063236149086,19,0.15,0.85
+,Alexander Albon,,Williams,,,,,,,,,,,2026,4,Miami Grand Prix,Q,15.0,15.666666666666666,15.0,,,15.0,15.0,,16.69550947512298,5.25,6.966826421268446,20,0.15,0.85
+,Sergio Perez,,Cadillac,,,,,,,,,,,2026,4,Miami Grand Prix,Q,18.0,18.0,18.0,,,18.0,18.0,,13.822514471210853,6.3,7.428377170681627,21,0.15,0.85
+,Valtteri Bottas,,Cadillac,,,,,,,,,,,2026,4,Miami Grand Prix,Q,19.0,19.0,19.0,,,19.0,18.5,,13.822514471210853,6.575,7.662127170681628,22,0.15,0.85
