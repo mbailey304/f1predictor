@@ -1,23 +1,23 @@
 FullName,TeamName,AvgFinish,BestFinish,WorstFinish,WinProbability,PodiumProbability,Top10Probability,DNFProbability
-Charles Leclerc,Ferrari,4.863,1,22,0.2844,0.5941,0.884,0.0806
-George Russell,Mercedes,5.234,1,22,0.2383,0.5365,0.8705,0.0806
-Lewis Hamilton,Ferrari,6.2833,1,22,0.14,0.3998,0.8282,0.0797
-Lando Norris,McLaren,6.5767,1,22,0.1157,0.3704,0.8111,0.0764
-Max Verstappen,Red Bull,8.8501,1,22,0.0474,0.1901,0.6684,0.0836
-Oscar Piastri,McLaren,9.2423,1,22,0.0395,0.1639,0.6406,0.0836
-Andrea Kimi Antonelli,Mercedes,9.2768,1,22,0.0388,0.1649,0.6295,0.0795
-Pierre Gasly,Alpine F1 Team,10.9788,1,22,0.0157,0.0833,0.4964,0.0753
-Oliver Bearman,Haas F1 Team,11.1156,1,22,0.0151,0.0832,0.487,0.0797
-Gabriel Bortoleto,Audi,11.457,1,22,0.0118,0.0736,0.4595,0.0802
-Isack Hadjar,Red Bull,12.1111,1,22,0.01,0.0577,0.4049,0.0881
-Liam Lawson,RB F1 Team,12.554,1,22,0.0073,0.045,0.3715,0.0772
-Franco Colapinto,Alpine F1 Team,12.4909,1,22,0.0073,0.0444,0.3796,0.0836
-Arvid Lindblad,RB F1 Team,12.762,1,22,0.0066,0.0419,0.36,0.079
-Sergio Pérez,Cadillac F1 Team,13.0866,1,22,0.0059,0.0359,0.3346,0.0787
-Esteban Ocon,Haas F1 Team,13.2514,1,22,0.0049,0.0335,0.3139,0.0783
-Carlos Sainz,Williams,13.744,1,22,0.0037,0.0269,0.2829,0.0781
-Alexander Albon,Williams,14.0064,1,22,0.0037,0.023,0.2634,0.0817
-Valtteri Bottas,Cadillac F1 Team,14.8469,1,22,0.0023,0.0139,0.2058,0.0774
-Nico Hülkenberg,Audi,15.0522,1,22,0.0012,0.0145,0.1878,0.0769
-Fernando Alonso,Aston Martin,17.35,1,22,0.0003,0.0023,0.0697,0.0771
-Lance Stroll,Aston Martin,17.8669,1,22,0.0001,0.0012,0.0507,0.0777
+Charles Leclerc,Ferrari,5.224,1,22,0.2411,0.5388,0.8738,0.0806
+George Russell,Mercedes,5.5199,1,22,0.2123,0.4957,0.8624,0.0806
+Kimi Antonelli,Mercedes,6.4789,1,22,0.1298,0.3711,0.8208,0.0797
+Lewis Hamilton,Ferrari,6.5017,1,22,0.1238,0.3747,0.8183,0.0764
+Lando Norris,McLaren,6.9689,1,22,0.1113,0.3407,0.7901,0.0836
+Max Verstappen,Red Bull Racing,8.4892,1,22,0.057,0.2088,0.6917,0.0795
+Oscar Piastri,McLaren,9.4128,1,22,0.0364,0.152,0.6308,0.0836
+Oliver Bearman,Haas F1 Team,10.9035,1,22,0.0163,0.0871,0.5016,0.0797
+Gabriel Bortoleto,Audi,11.0903,1,22,0.0144,0.078,0.489,0.0753
+Pierre Gasly,Alpine,11.6892,1,22,0.0104,0.0649,0.4438,0.0881
+Liam Lawson,Racing Bulls,12.4534,1,22,0.0079,0.0431,0.3839,0.0836
+Franco Colapinto,Alpine,12.7639,1,22,0.0065,0.038,0.3523,0.0783
+Esteban Ocon,Haas F1 Team,12.8319,1,22,0.0063,0.039,0.3488,0.0772
+Arvid Lindblad,Racing Bulls,12.6531,1,22,0.0062,0.0418,0.3651,0.0802
+Isack Hadjar,Red Bull Racing,13.3335,1,22,0.0054,0.0304,0.3164,0.079
+Carlos Sainz,Williams,13.4296,1,22,0.0051,0.0295,0.3092,0.0787
+Alexander Albon,Williams,13.5773,1,22,0.0043,0.0271,0.2961,0.0781
+Sergio Perez,Cadillac,14.8372,1,22,0.0025,0.013,0.2011,0.0817
+Nico Hulkenberg,Audi,14.8003,1,22,0.0023,0.0132,0.2081,0.0774
+Fernando Alonso,Aston Martin,16.611,1,22,0.0004,0.0041,0.1024,0.0771
+Valtteri Bottas,Cadillac,16.2673,1,22,0.0002,0.0062,0.118,0.0769
+Lance Stroll,Aston Martin,17.1631,1,22,0.0001,0.0028,0.0763,0.0777
