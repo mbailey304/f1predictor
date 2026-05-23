@@ -1,23 +1,33 @@
 DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,Year,Round,EventName,SessionCode,driver_prev_pos_avg_3,driver_prev_pos_avg_5,team_prev_pos_avg_3,driver_prev_points_avg_3,driver_prev_grid_avg_3,current_season_driver_avg_pos,current_season_team_avg_pos,current_season_driver_avg_grid,PracticeBestLap,PracticeAvgLap,PracticeBestS1,PracticeBestS2,PracticeBestS3,PracticeLapCount,WeekendQPosition,WeekendSQPosition,WeekendSPosition,PriorModelScore,CurrentSeasonScore,FinalScore,PredictedRank,PriorWeight,CurrentWeight
-,George Russell,,Mercedes,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,2.5,,,,1.0,1.0,,,,,,,,,,,4.309515480563015,0.35,0.7459515480563015,1,0.1,0.9
-,Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,8.0,,,,2.0,1.5,,,,,,,,,,,6.850736116406899,0.625,1.24757361164069,2,0.1,0.9
+,George Russell,,Mercedes,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,2.5,,,,1.0,1.0,,,,,,,,,,,4.083266186513415,0.35,0.7233266186513416,1,0.1,0.9
+,Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,8.0,,,,2.0,1.5,,,,,,,,,,,6.358499932657186,0.625,1.1983499932657187,2,0.1,0.9
 ,Isack Hadjar,,Red Bull Racing,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,6.0,,,,3.0,3.0,,,,,,,,,,,4.62204885689037,1.05,1.4072048856890371,3,0.1,0.9
-,Charles Leclerc,,Ferrari,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.5,,,,4.0,4.0,,,,,,,,,,,6.210108466765811,1.4,1.8810108466765811,4,0.1,0.9
-,Oscar Piastri,,McLaren,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.0,,,,5.0,5.5,,,,,,,,,,,3.799351011624475,1.825,2.0224351011624475,5,0.1,0.9
-,Max Verstappen,,Red Bull Racing,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,1.0,,,,,3.0,,,,,,,,,,,2.230918829384612,2.45,2.4280918829384612,6,0.1,0.9
-,Lando Norris,,McLaren,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.0,,,,6.0,6.0,,,,,,,,,,,5.917687732909558,2.1,2.481768773290956,7,0.1,0.9
-,Lewis Hamilton,,Ferrari,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,7.0,5.5,,,,,,,,,,,9.52858205529424,2.225,2.955358205529424,8,0.1,0.9
-,Liam Lawson,,Racing Bulls,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,10.5,,,,8.0,8.5,,,,,,,,,,,10.057881403344359,2.875,3.593288140334436,9,0.1,0.9
-,Arvid Lindblad,,Racing Bulls,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,9.0,,,,9.0,9.0,,,,,,,,,,,12.224088047262015,3.15,4.057408804726202,10,0.1,0.9
-,Gabriel Bortoleto,,Audi,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,8.5,,,,10.0,10.0,,,,,,,,,,,11.41082342357651,3.5,4.291082342357651,11,0.1,0.9
-,Nico Hulkenberg,,Audi,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,14.5,,,,11.0,10.5,,,,,,,,,,,11.298014474398144,3.7750000000000004,4.5273014474398146,12,0.1,0.9
-,Carlos Sainz,,Williams,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,12.0,,,,,15.0,,,,,,,,,,,9.258067056750956,4.25,4.750806705675096,13,0.1,0.9
-,Oliver Bearman,,Haas F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,12.0,12.5,,,,,,,,,,,11.393010223089826,4.275,4.986801022308983,14,0.1,0.9
-,Esteban Ocon,,Haas F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,10.5,,,,13.0,13.0,,,,,,,,,,,11.08975612758025,4.55,5.203975612758025,15,0.1,0.9
-,Lance Stroll,,Aston Martin,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,15.0,,,,,17.0,,,,,,,,,,,13.434679489176773,4.55,5.438467948917677,16,0.1,0.9
-,Alexander Albon,,Williams,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,16.0,,,,15.0,15.0,,,,,,,,,,,11.519167552795288,5.25,5.876916755279529,17,0.1,0.9
-,Pierre Gasly,,Alpine,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,16.5,,,,14.0,15.0,,,,,,,,,,,14.731646600206021,5.050000000000001,6.018164660020603,18,0.1,0.9
-,Franco Colapinto,,Alpine,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,18.0,,,,16.0,16.0,,,,,,,,,,,10.522004468571666,5.6,6.092200446857166,19,0.1,0.9
-,Fernando Alonso,,Aston Martin,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,17.0,17.0,,,,,,,,,,,11.738024045624496,5.95,6.52880240456245,20,0.1,0.9
-,Sergio Perez,,Cadillac,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,18.0,,,,18.0,18.0,,,,,,,,,,,12.331191573681508,6.3,6.903119157368151,21,0.1,0.9
-,Valtteri Bottas,,Cadillac,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,19.0,,,,19.0,18.5,,,,,,,,,,,12.331191573681508,6.575,7.150619157368151,22,0.1,0.9
+,Charles Leclerc,,Ferrari,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.5,,,,4.0,4.0,,,,,,,,,,,5.484405853794543,1.4,1.8084405853794543,4,0.1,0.9
+,Oscar Piastri,,McLaren,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.0,,,,5.0,5.5,,,,,,,,,,,3.670565228086303,1.825,2.0095565228086305,5,0.1,0.9
+,Isack Hadjar,,Red Bull,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,3.0,,,,3.0,,,,,,,,,,,,4.484127703179956,2.175,2.4059127703179954,6,0.1,0.9
+,Lando Norris,,McLaren,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,4.0,,,,6.0,6.0,,,,,,,,,,,5.249202820831368,2.1,2.414920282083137,7,0.1,0.9
+,Max Verstappen,,Red Bull Racing,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,1.0,,,,,3.0,,,,,,,,,,,2.230918829384612,2.45,2.4280918829384612,8,0.1,0.9
+,Lewis Hamilton,,Ferrari,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,7.0,5.5,,,,,,,,,,,9.52858205529424,2.225,2.955358205529424,9,0.1,0.9
+,Liam Lawson,,Racing Bulls,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,10.5,,,,8.0,8.5,,,,,,,,,,,10.138708133421307,2.875,3.6013708133421307,10,0.1,0.9
+,Liam Lawson,,RB F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,8.0,,,,8.0,,,,,,,,,,,,11.001200403862292,3.175,3.957620040386229,11,0.1,0.9
+,Arvid Lindblad,,Racing Bulls,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,9.0,,,,9.0,9.0,,,,,,,,,,,11.365137104260501,3.15,3.9715137104260503,12,0.1,0.9
+,Arvid Lindblad,,RB F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,9.0,,,,9.0,,,,,,,,,,,,10.678510181491394,3.375,4.10535101814914,13,0.1,0.9
+,Andrea Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,12.0,12.0,12.0,,,,,,,,,,,,,,,9.6359538710339,3.575,4.18109538710339,14,0.1,0.9
+,Gabriel Bortoleto,,Audi,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,8.5,,,,10.0,10.0,,,,,,,,,,,11.56443733599344,3.5,4.306443733599344,15,0.1,0.9
+,Max Verstappen,,Red Bull,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,,,,,,,,,,,,,,,,,11.733942489056025,3.575,4.390894248905603,16,0.1,0.9
+,Nico Hülkenberg,,Audi,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,,,,,,10.5,,,,,,,,,,,13.185735086442143,3.575,4.536073508644215,17,0.1,0.9
+,Nico Hulkenberg,,Audi,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,14.5,,,,11.0,10.5,,,,,,,,,,,11.451628386815074,3.7750000000000004,4.542662838681508,18,0.1,0.9
+,Sergio Pérez,,Cadillac F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,,,,,,,,,,,,,,,,,14.788324437953703,3.575,4.69633244379537,19,0.1,0.9
+,Carlos Sainz,,Williams,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,12.0,,,,,15.0,,,,,,,,,,,9.258067056750956,4.25,4.750806705675096,20,0.1,0.9
+,Oliver Bearman,,Haas F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,12.0,12.5,,,,,,,,,,,11.00755822070277,4.275,4.948255822070277,21,0.1,0.9
+,Pierre Gasly,,Alpine F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,14.0,,,,14.0,,,,,,,,,,,,10.936933166663124,4.375,5.031193316666313,22,0.1,0.9
+,Esteban Ocon,,Haas F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,10.5,,,,13.0,13.0,,,,,,,,,,,10.42346488263595,4.55,5.137346488263595,23,0.1,0.9
+,Lance Stroll,,Aston Martin,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,15.0,,,,,17.0,,,,,,,,,,,13.292384428511971,4.55,5.4242384428511965,24,0.1,0.9
+,Franco Colapinto,,Alpine F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,16.0,,,,16.0,,,,,,,,,,,,13.073856593163605,4.775,5.604885659316361,25,0.1,0.9
+,Alexander Albon,,Williams,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,16.0,,,,15.0,15.0,,,,,,,,,,,11.519167552795288,5.25,5.876916755279529,26,0.1,0.9
+,Pierre Gasly,,Alpine,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,16.5,,,,14.0,15.0,,,,,,,,,,,14.831547274119565,5.050000000000001,6.028154727411957,27,0.1,0.9
+,Franco Colapinto,,Alpine,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,18.0,,,,16.0,16.0,,,,,,,,,,,10.969404732574855,5.6,6.136940473257486,28,0.1,0.9
+,Valtteri Bottas,,Cadillac F1 Team,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,19.0,,,,19.0,,,,,,,,,,,,13.004225169242181,5.375,6.137922516924219,29,0.1,0.9
+,Fernando Alonso,,Aston Martin,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,11.5,,,,17.0,17.0,,,,,,,,,,,11.48333774931901,5.95,6.503333774931901,30,0.1,0.9
+,Sergio Perez,,Cadillac,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,18.0,,,,18.0,18.0,,,,,,,,,,,12.79180506684738,6.3,6.949180506684738,31,0.1,0.9
+,Valtteri Bottas,,Cadillac,,,,,,,,,,,2026,5,Canadian Grand Prix,Q,,19.0,,,,19.0,18.5,,,,,,,,,,,12.79180506684738,6.575,7.196680506684738,32,0.1,0.9
