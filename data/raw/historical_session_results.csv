@@ -1506,3 +1506,25 @@ DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosi
 10,Pierre Gasly,GAS,Alpine,20.0,20,20.0,,,,0 days 00:01:08.477000,Lapped,0.0,22.0,2026,5,Canadian Grand Prix,S
 6,Isack Hadjar,HAD,Red Bull Racing,21.0,21,8.0,,,,0 days 00:00:18.135000,Lapped,0.0,20.0,2026,5,Canadian Grand Prix,S
 14,Fernando Alonso,ALO,Aston Martin,22.0,R,15.0,,,,,Retired,0.0,15.0,2026,5,Canadian Grand Prix,S
+63,George Russell,RUS,Mercedes,1.0,,,0 days 00:01:13.953000,0 days 00:01:13.079000,0 days 00:01:12.578000,,,,,2026,5,Canadian Grand Prix,Q
+12,Andrea Kimi Antonelli,ANT,Mercedes,2.0,,,0 days 00:01:13.380000,0 days 00:01:13.076000,0 days 00:01:12.646000,,,,,2026,5,Canadian Grand Prix,Q
+1,Lando Norris,NOR,McLaren,3.0,,,0 days 00:01:13.503000,0 days 00:01:13.049000,0 days 00:01:12.729000,,,,,2026,5,Canadian Grand Prix,Q
+81,Oscar Piastri,PIA,McLaren,4.0,,,0 days 00:01:13.559000,0 days 00:01:13.285000,0 days 00:01:12.781000,,,,,2026,5,Canadian Grand Prix,Q
+44,Lewis Hamilton,HAM,Ferrari,5.0,,,0 days 00:01:13.767000,0 days 00:01:13.041000,0 days 00:01:12.868000,,,,,2026,5,Canadian Grand Prix,Q
+3,Max Verstappen,VER,Red Bull,6.0,,,0 days 00:01:14.067000,0 days 00:01:13.479000,0 days 00:01:12.907000,,,,,2026,5,Canadian Grand Prix,Q
+6,Isack Hadjar,HAD,Red Bull,7.0,,,0 days 00:01:13.654000,0 days 00:01:12.975000,0 days 00:01:12.935000,,,,,2026,5,Canadian Grand Prix,Q
+16,Charles Leclerc,LEC,Ferrari,8.0,,,0 days 00:01:13.825000,0 days 00:01:13.496000,0 days 00:01:12.976000,,,,,2026,5,Canadian Grand Prix,Q
+41,Arvid Lindblad,LIN,RB F1 Team,9.0,,,0 days 00:01:13.895000,0 days 00:01:13.548000,0 days 00:01:13.280000,,,,,2026,5,Canadian Grand Prix,Q
+43,Franco Colapinto,COL,Alpine F1 Team,10.0,,,0 days 00:01:14.466000,0 days 00:01:13.857000,0 days 00:01:13.697000,,,,,2026,5,Canadian Grand Prix,Q
+27,Nico Hülkenberg,HUL,Audi,11.0,,,0 days 00:01:14.562000,0 days 00:01:13.886000,,,,,,2026,5,Canadian Grand Prix,Q
+30,Liam Lawson,LAW,RB F1 Team,12.0,,,0 days 00:01:14.346000,0 days 00:01:13.897000,,,,,,2026,5,Canadian Grand Prix,Q
+5,Gabriel Bortoleto,BOR,Audi,13.0,,,0 days 00:01:14.775000,0 days 00:01:14.071000,,,,,,2026,5,Canadian Grand Prix,Q
+10,Pierre Gasly,GAS,Alpine F1 Team,14.0,,,0 days 00:01:14.698000,0 days 00:01:14.187000,,,,,,2026,5,Canadian Grand Prix,Q
+55,Carlos Sainz,SAI,Williams,15.0,,,0 days 00:01:14.276000,0 days 00:01:14.273000,,,,,,2026,5,Canadian Grand Prix,Q
+87,Oliver Bearman,BEA,Haas F1 Team,16.0,,,0 days 00:01:14.449000,0 days 00:01:14.416000,,,,,,2026,5,Canadian Grand Prix,Q
+31,Esteban Ocon,OCO,Haas F1 Team,17.0,,,0 days 00:01:14.845000,,,,,,,2026,5,Canadian Grand Prix,Q
+23,Alexander Albon,ALB,Williams,18.0,,,0 days 00:01:14.851000,,,,,,,2026,5,Canadian Grand Prix,Q
+14,Fernando Alonso,ALO,Aston Martin,19.0,,,0 days 00:01:15.196000,,,,,,,2026,5,Canadian Grand Prix,Q
+11,Sergio Pérez,PER,Cadillac F1 Team,20.0,,,0 days 00:01:15.429000,,,,,,,2026,5,Canadian Grand Prix,Q
+18,Lance Stroll,STR,Aston Martin,21.0,,,0 days 00:01:16.195000,,,,,,,2026,5,Canadian Grand Prix,Q
+77,Valtteri Bottas,BOT,Cadillac F1 Team,22.0,,,0 days 00:01:16.272000,,,,,,,2026,5,Canadian Grand Prix,Q
