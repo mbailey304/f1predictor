@@ -1528,3 +1528,25 @@ DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosi
 11,Sergio Pérez,PER,Cadillac F1 Team,20.0,,,0 days 00:01:15.429000,,,,,,,2026,5,Canadian Grand Prix,Q
 18,Lance Stroll,STR,Aston Martin,21.0,,,0 days 00:01:16.195000,,,,,,,2026,5,Canadian Grand Prix,Q
 77,Valtteri Bottas,BOT,Cadillac F1 Team,22.0,,,0 days 00:01:16.272000,,,,,,,2026,5,Canadian Grand Prix,Q
+12,Andrea Kimi Antonelli,ANT,Mercedes,1.0,1,2.0,,,,0 days 01:28:15.758000,Finished,25.0,68.0,2026,5,Canadian Grand Prix,R
+44,Lewis Hamilton,HAM,Ferrari,2.0,2,5.0,,,,0 days 00:00:10.768000,Finished,18.0,68.0,2026,5,Canadian Grand Prix,R
+3,Max Verstappen,VER,Red Bull,3.0,3,6.0,,,,0 days 00:00:11.276000,Finished,15.0,68.0,2026,5,Canadian Grand Prix,R
+16,Charles Leclerc,LEC,Ferrari,4.0,4,8.0,,,,0 days 00:00:44.151000,Finished,12.0,68.0,2026,5,Canadian Grand Prix,R
+6,Isack Hadjar,HAD,Red Bull,5.0,5,7.0,,,,0 days 00:00:05.033000,Lapped,10.0,67.0,2026,5,Canadian Grand Prix,R
+43,Franco Colapinto,COL,Alpine F1 Team,6.0,6,10.0,,,,0 days 00:00:19.510000,Lapped,8.0,67.0,2026,5,Canadian Grand Prix,R
+30,Liam Lawson,LAW,RB F1 Team,7.0,7,12.0,,,,0 days 00:00:34.235000,Lapped,6.0,67.0,2026,5,Canadian Grand Prix,R
+10,Pierre Gasly,GAS,Alpine F1 Team,8.0,8,14.0,,,,0 days 00:00:34.572000,Lapped,4.0,67.0,2026,5,Canadian Grand Prix,R
+55,Carlos Sainz,SAI,Williams,9.0,9,15.0,,,,0 days 00:00:58.014000,Lapped,2.0,67.0,2026,5,Canadian Grand Prix,R
+87,Oliver Bearman,BEA,Haas F1 Team,10.0,10,16.0,,,,0 days 00:00:59.049000,Lapped,1.0,67.0,2026,5,Canadian Grand Prix,R
+81,Oscar Piastri,PIA,McLaren,11.0,11,4.0,,,,0 days 00:00:12.699000,Lapped,0.0,66.0,2026,5,Canadian Grand Prix,R
+27,Nico Hülkenberg,HUL,Audi,12.0,12,11.0,,,,0 days 00:00:14.182000,Lapped,0.0,66.0,2026,5,Canadian Grand Prix,R
+5,Gabriel Bortoleto,BOR,Audi,13.0,13,13.0,,,,0 days 00:00:21.156000,Lapped,0.0,66.0,2026,5,Canadian Grand Prix,R
+31,Esteban Ocon,OCO,Haas F1 Team,14.0,14,17.0,,,,0 days 00:01:08.635000,Lapped,0.0,66.0,2026,5,Canadian Grand Prix,R
+18,Lance Stroll,STR,Aston Martin,15.0,15,22.0,,,,0 days 00:00:18.397000,Lapped,0.0,64.0,2026,5,Canadian Grand Prix,R
+77,Valtteri Bottas,BOT,Cadillac F1 Team,16.0,16,21.0,,,,0 days 00:00:53.390000,Lapped,0.0,64.0,2026,5,Canadian Grand Prix,R
+11,Sergio Pérez,PER,Cadillac F1 Team,17.0,R,20.0,,,,,Retired,0.0,39.0,2026,5,Canadian Grand Prix,R
+1,Lando Norris,NOR,McLaren,18.0,R,3.0,,,,,Retired,0.0,38.0,2026,5,Canadian Grand Prix,R
+63,George Russell,RUS,Mercedes,19.0,R,1.0,,,,,Retired,0.0,29.0,2026,5,Canadian Grand Prix,R
+14,Fernando Alonso,ALO,Aston Martin,20.0,R,19.0,,,,,Retired,0.0,23.0,2026,5,Canadian Grand Prix,R
+23,Alexander Albon,ALB,Williams,21.0,R,18.0,,,,,Retired,0.0,11.0,2026,5,Canadian Grand Prix,R
+41,Arvid Lindblad,LIN,RB F1 Team,22.0,W,9.0,,,,,Did not start,0.0,0.0,2026,5,Canadian Grand Prix,R
