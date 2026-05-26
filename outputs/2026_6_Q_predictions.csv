@@ -1,0 +1,33 @@
+DriverNumber,FullName,Abbreviation,TeamName,Position,ClassifiedPosition,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,Year,Round,EventName,SessionCode,driver_prev_pos_avg_3,driver_prev_pos_avg_5,team_prev_pos_avg_3,driver_prev_points_avg_3,driver_prev_grid_avg_3,current_season_driver_avg_pos,current_season_team_avg_pos,current_season_driver_avg_grid,PriorModelScore,CurrentSeasonScore,FinalScore,PredictedRank,PriorWeight,CurrentWeight
+,George Russell,,Mercedes,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,1.0,1.0,1.0,,,1.0,1.3333333333333333,,3.5273017901784027,0.4,0.5563650895089202,1,0.05,0.95
+,Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,,8.0,,,,2.0,1.5,,6.148385221295478,0.625,0.9011692610647739,2,0.05,0.95
+,Andrea Kimi Antonelli,,Mercedes,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,8.666666666666666,8.666666666666666,8.666666666666666,,,2.0,2.0,,4.952901474858586,0.7,0.9126450737429292,3,0.05,0.95
+,Isack Hadjar,,Red Bull Racing,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,7.0,5.0,,,,5.0,3.0,,6.537763300372888,1.45,1.7043881650186443,4,0.05,0.95
+,Lando Norris,,McLaren,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,3.0,4.5,3.0,,,4.5,4.5,,5.271114212243327,1.575,1.7598057106121663,5,0.05,0.95
+,Max Verstappen,,Red Bull Racing,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,6.0,6.0,,,,6.0,3.0,,4.120959941363917,1.6500000000000001,1.773547997068196,6,0.05,0.95
+,Oscar Piastri,,McLaren,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,4.0,4.5,4.0,,,4.5,4.5,,5.646273604927971,1.575,1.7785636802463984,7,0.05,0.95
+,Lewis Hamilton,,Ferrari,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,5.0,6.0,5.0,,,6.0,6.0,,1.680001398686443,2.1,2.079000069934322,8,0.05,0.95
+,Max Verstappen,,Red Bull,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,6.0,6.0,6.5,,,6.0,6.5,,1.8373722671173784,2.1750000000000003,2.158118613355869,9,0.05,0.95
+,Charles Leclerc,,Ferrari,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,8.0,6.0,8.0,,,6.0,6.0,,3.813350671979914,2.1,2.1856675335989957,10,0.05,0.95
+,Isack Hadjar,,Red Bull,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,7.0,7.0,7.0,,,5.0,7.0,,5.460164890688507,2.05,2.2205082445344253,11,0.05,0.95
+,Arvid Lindblad,,RB F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,9.0,9.0,9.0,,,9.0,9.0,,11.073039608348804,3.15,3.5461519804174397,12,0.05,0.95
+,Arvid Lindblad,,Racing Bulls,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,9.0,9.0,,,,9.0,9.0,,12.91504966302369,3.15,3.6382524831511844,13,0.05,0.95
+,Liam Lawson,,Racing Bulls,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,12.0,10.0,,,,10.0,8.5,,13.238958885886454,3.275,3.7731979442943224,14,0.05,0.95
+,Liam Lawson,,RB F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,12.0,12.0,10.5,,,10.0,10.5,,8.641325257967717,3.575,3.8283162628983862,15,0.05,0.95
+,Nico Hülkenberg,,Audi,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,11.0,11.0,11.0,,,11.0,11.25,,8.593978533133194,3.8875,4.12282392665666,16,0.05,0.95
+,Gabriel Bortoleto,,Audi,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,13.0,11.5,13.0,,,11.5,11.5,,8.345194204242953,4.025,4.241009710212148,17,0.05,0.95
+,Nico Hulkenberg,,Audi,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,,14.5,,,,11.0,11.333333333333334,,11.850875116156757,3.9000000000000004,4.297543755807838,18,0.05,0.95
+,Franco Colapinto,,Alpine F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,10.0,10.0,10.0,,,13.0,10.0,,13.094741424181922,4.1,4.549737071209096,19,0.05,0.95
+,Pierre Gasly,,Alpine F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,14.0,14.0,12.0,,,14.0,12.0,,10.79187421524625,4.6,4.909593710762311,20,0.05,0.95
+,Franco Colapinto,,Alpine,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,10.0,13.0,,,,13.0,16.0,,11.080441394808345,5.0,5.304022069740418,21,0.05,0.95
+,Oliver Bearman,,Haas F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,16.0,14.0,16.0,,,14.0,14.5,,12.843692537127913,4.975,5.368434626856395,22,0.05,0.95
+,Pierre Gasly,,Alpine,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,14.0,14.0,,,,14.0,15.0,,12.382357828874596,5.050000000000001,5.41661789144373,23,0.05,0.95
+,Esteban Ocon,,Haas F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,17.0,15.0,17.0,,,15.0,15.0,,14.64451287205726,5.25,5.719725643602863,24,0.05,0.95
+,Carlos Sainz,,Williams,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,15.0,15.0,15.0,,,15.0,16.0,,13.948571692442014,5.4,5.8274285846221,25,0.05,0.95
+,Alexander Albon,,Williams,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,18.0,16.5,18.0,,,16.5,16.5,,15.23529949640011,5.775,6.248014974820006,26,0.05,0.95
+,Sergio Perez,,Cadillac,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,,18.0,,,,18.0,18.0,,13.660780554761496,6.3,6.668039027738074,27,0.05,0.95
+,Fernando Alonso,,Aston Martin,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,19.0,18.0,19.0,,,18.0,18.0,,14.707482973882014,6.3,6.7203741486941,28,0.05,0.95
+,Valtteri Bottas,,Cadillac,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,22.0,20.5,,,,20.5,18.5,,16.376208310426815,6.875,7.350060415521341,29,0.05,0.95
+,Sergio Pérez,,Cadillac F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,20.0,20.0,20.0,,,20.0,20.0,,15.049471598024088,7.0,7.402473579901204,30,0.05,0.95
+,Lance Stroll,,Aston Martin,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,21.0,21.0,21.0,,,21.0,19.0,,14.481054776832119,7.050000000000001,7.421552738841607,31,0.05,0.95
+,Valtteri Bottas,,Cadillac F1 Team,,,,,,,,,,,2026,6,Monaco Grand Prix,Q,22.0,22.0,21.0,,,20.5,21.0,,17.468266068806134,7.25,7.760913303440306,32,0.05,0.95
